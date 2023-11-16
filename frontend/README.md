@@ -16,3 +16,5 @@
 
 4. Open your web browser and visit [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
 
+### HomePage:
+![alt text](./HomePage.png)
