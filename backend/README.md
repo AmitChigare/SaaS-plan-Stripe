@@ -16,3 +16,9 @@
 
 4. Server might be running at port 5000 [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
+
+### Datebase:
+[DataBase]('Database.png')
+
+### Stripe Plans
+[Stripe Plans]('StripePlans.png')
