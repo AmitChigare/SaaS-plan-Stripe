@@ -29,6 +29,7 @@ app.use(
 );
 
 const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY);
+/*********** create subscription ************/
 
 const stripeSession = async (plan) => {
   try {
@@ -74,4 +75,62 @@ app.post("/api/v1/create-subscription-checkout-session", async (req, res) => {
   } catch (error) {
     res.send(error);
   }
+});
+
+/************ payment success ********/
+
+app.post("/api/v1/payment-success", async (req, res) => {
+  const { sessionId, firebaseId } = req.body;
+
+  try {
+    const session = await stripe.checkout.sessions.retrieve(sessionId);
+
+    if (session.payment_status === "paid") {
+      const subscriptionId = session.subscription;
+      try {
+        const subscription = await stripe.subscriptions.retrieve(
+          subscriptionId
+        );
+        const user = await admin.auth().getUser(firebaseId);
+        const planId = subscription.plan.id;
+        const planType = subscription.plan.amount === 50000 ? "basic" : "pro";
+        const startDate = moment
+          .unix(subscription.current_period_start)
+          .format("YYYY-MM-DD");
+        const endDate = moment
+          .unix(subscription.current_period_end)
+          .format("YYYY-MM-DD");
+        const durationInSeconds =
+          subscription.current_period_end - subscription.current_period_start;
+        const durationInDays = moment
+          .duration(durationInSeconds, "seconds")
+          .asDays();
+        await admin
+          .database()
+          .ref("users")
+          .child(user.uid)
+          .update({
+            subscription: {
+              sessionId: null,
+              planId: planId,
+              planType: planType,
+              planStartDate: startDate,
+              planEndDate: endDate,
+              planDuration: durationInDays,
+            },
+          });
+      } catch (error) {
+        console.error("Error retrieving subscription:", error);
+      }
+      return res.json({ message: "Payment successful" });
+    } else {
+      return res.json({ message: "Payment failed" });
+    }
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Now listening on port ${port}`);
 });
