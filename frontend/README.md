@@ -16,5 +16,18 @@
 
 4. Open your web browser and visit [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
 
-### HomePage:
+### Home Page:
 ![HomePage](HomePage.png)
+
+### Register Page:
+![Register Page](RegisterPage.png)
+
+### Login Page:
+![Login Page](LoginPage.png)
+
+### Success Page:
+![Success Page](SuccessPage.png)
+
+### Cancel Page:
+![Cancel Page](CancelPage.png)
+
