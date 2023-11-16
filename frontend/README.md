@@ -26,7 +26,7 @@
 ![Login Page](LoginPage.png)
 
 ### Success Page:
-![Success Page](SuccessPage.png)
+![Success Page](PaymentSuccess.png)
 
 ### Cancel Page:
 ![Cancel Page](CancelPage.png)
