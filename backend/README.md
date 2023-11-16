@@ -14,5 +14,5 @@
    $ npm run dev
    ```
 
-4. Open your web browser and visit [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
+4. Server might be running at port 5000 [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
