@@ -43,7 +43,7 @@ const Login = () => {
       shadow-2xl rounded-3xl"
       >
         <div className="pt-16 pb-4 text-3xl font-bold capitalize">
-          Login To serVices
+          Login To SaaS Plans
         </div>
 
         {/**** email ****/}
@@ -85,6 +85,11 @@ const Login = () => {
           >
             Login
           </button>
+        </div>
+        <div className="mb-5">
+          <a href="/" className="underline text-[#3d5fc4]">
+            Home
+          </a>
         </div>
       </form>
     </div>

@@ -55,15 +55,15 @@ const Register = () => {
         className="grid place-items-center lg:w-5/12 sm:w-9/12 w-11/12 mx-auto bg-white text-[#4f7cff] shadow-2xl rounded-3xl"
       >
         <div className="pt-16 pb-4 text-3xl font-bold capitalize">
-          Register To serVices
+          Register To SaaS Plans
         </div>
         {/**** fullname ***/}
         <div className="w-full flex flex-col px-14 py-8">
-          <label>Fullname</label>
+          <label>Full name</label>
           <input
             type="text"
             className="w-full border border-gray-300 rounded-lg px-3 py-3 mt-1 text-lg outline-none"
-            placeholder="your fullname"
+            placeholder="Your full name"
             required
             value={fullname}
             onChange={(e) => setFullName(e.target.value)}
@@ -87,7 +87,7 @@ const Register = () => {
           <input
             type="password"
             className="w-full border border-gray-300 rounded-lg px-3 py-3 mt-1 text-lg outline-none"
-            placeholder="******"
+            placeholder="********"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -108,6 +108,11 @@ const Register = () => {
           >
             Register
           </button>
+        </div>
+        <div className="mb-5">
+          <a href="/" className="underline text-[#3d5fc4]">
+            Home
+          </a>
         </div>
       </form>
     </div>
