@@ -7,3 +7,18 @@ The description of the plans is as follows,
 - Basic (Free for 14 Days): Limited to 1 user
 - Standard: INR 4999 Per Year, Per User, up to 5 users
 - Plus: INR 3999 Per Year, Per User above 10 users
+
+
+## Repository Setup
+
+1. Clone the repository to your local machine (`main` branch):
+
+   ```
+   $ git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```
+   $ cd <directory>
+   ```
